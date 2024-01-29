@@ -1,0 +1,16 @@
+.grafica{
+    width: 270px;
+    height: 360px;
+}
+canvas{
+    direction: ltr;
+  font-size: 0;
+  line-height: 0;
+  position: relative;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

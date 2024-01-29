@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="acta" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="acfee126-02ad-49e0-b170-a0857115fe48">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="institucionMunicipio" class="java.lang.String"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="firmanteDgemssFecha" class="java.lang.String"/>
+	<parameter name="opctitulacion" class="java.lang.String"/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<parameter name="doc" class="java.lang.String"/>
+	<parameter name="carrera" class="java.lang.String"/>
+	<parameter name="institucion" class="java.lang.String"/>
+	<parameter name="declaracion" class="java.lang.String"/>
+	<parameter name="firmanteEscuelaSello" class="java.lang.String"/>
+	<parameter name="foto" class="java.io.InputStream"/>
+	<parameter name="firmanteDgemssSello" class="java.lang.String"/>
+	<parameter name="qr" class="java.io.InputStream"/>
+	<parameter name="folioControl" class="java.lang.String"/>
+	<parameter name="cadenaOriginal" class="java.lang.String"/>
+	<parameter name="foja" class="java.lang.Integer"/>
+	<parameter name="libro" class="java.lang.Integer"/>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="primerApellido" class="java.lang.String"/>
+	<parameter name="segundoApellido" class="java.lang.String"/>
+	<parameter name="numero" class="java.lang.Integer"/>
+	<parameter name="presidente" class="java.lang.String"/>
+	<parameter name="vocal" class="java.lang.String"/>
+	<parameter name="secretario" class="java.lang.String"/>
+	<parameter name="firmanteEscuelaTitulo" class="java.lang.String"/>
+	<parameter name="firmanteEscuelaNombreCompleto" class="java.lang.String"/>
+	<parameter name="firmanteDgemssTitulo" class="java.lang.String"/>
+	<parameter name="firmanteDgemssNombreCompleto" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="-10" y="0" width="570" height="802" uuid="cb6b6a73-d428-4c75-813f-65fe0aa777f7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["MARCO CARTA.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<pageHeader>
+		<band>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<image>
+				<reportElement x="456" y="41" width="60" height="62" uuid="3574caea-7a75-446b-8e2c-405b4fe26a90"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="60" y="60" width="450" height="24" uuid="d3af88a7-8808-4e83-9df8-3662e0e79850"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECRETARÍA DE EDUCACIÓN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="161" y="191" width="362" height="190" uuid="09107927-f8e7-442b-9d7a-b8986b164643"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En el estado de Morelos en el municipio "+$P{institucionMunicipio}+" en la fecha "+$P{firmanteDgemssFecha}+" se reunieron los miembros del jurado integrado por:"+$P{presidente}+" "+$P{secretario}+" "+$P{vocal}+", bajo la presidencia del primero y con carácter de secretario el último, para efectuar la evaluación de especialidad de: "+$P{nombre}+" "+$P{primerApellido}+" "+$P{segundoApellido}+", mediante "+$P{opctitulacion}+": "+$P{titulo}+", para obtener el "+$P{doc}+" de la carrera de "+$P{carrera}+" con reconocimiento de Validez Oficial de Estudios de la Secretaria de Educación del Estado de Morelos por parte de la institución educativa "+$P{institucion}+"."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="140" width="520" height="30" uuid="6b575109-440d-4390-94c7-646a56b39d02"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Acta de evaluación de especialidad.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="84" width="390" height="30" uuid="18a3ac25-1874-4356-9f56-025668231a72"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Dirección General de Edcuación Media Superior y Superior]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="159" y="465" width="362" height="79" uuid="fe7755be-25b6-4c4c-a419-2d6c42230acc"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firmanteEscuelaSello}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="20" y="220" width="124" height="169" uuid="35faba1d-fc2a-4f2f-9dea-9f2a02e7817d"/>
+				<imageExpression><![CDATA[$P{foto}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="159" y="430" width="363" height="30" uuid="4effad14-05e6-4c7f-99ea-f03aea9e679d"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma director:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="26" y="453" width="104" height="30" uuid="dfd97eb6-f85c-499d-94cf-84b5aad366aa"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Foja: "+$P{foja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="492" width="102" height="30" uuid="f72bad07-53fa-488c-b885-d8d1dfa307af"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Libro: "+$P{libro}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center">
+				<reportElement x="60" y="40" width="70" height="70" uuid="178a055a-143b-4dd3-901e-74faad1cced2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["logoMorelos1.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="20" y="40" width="540" height="20" uuid="c9223bfc-c1b4-40bd-9b6a-f5643f4f812a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GOBIERNO DEL ESTADO DE MORELOS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="159" y="545" width="363" height="1" uuid="25a89e39-9a02-4fa4-8310-390a3890b9df"/>
+			</line>
+			<textField>
+				<reportElement x="161" y="386" width="362" height="30" uuid="9600983a-9e58-42f7-ab1f-6068c0230990"/>
+				<textFieldExpression><![CDATA["Al termino del acto los presentes miembros del jurado optaron por declararlo (a): "+$P{declaracion}+"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="26" y="416" width="104" height="30" uuid="d10cb80c-92d3-422b-8dc6-179f0a9c7834"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Acta: "+$P{numero}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="802" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="429" y="640" width="76" height="70" uuid="804f4544-35ca-4dbc-9b75-07d62184a694">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{qr}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="214" y="710" width="174" height="15" forecolor="#000000" uuid="d18a71ee-530b-451e-8c54-50041983c7ea"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{folioControl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="-226" width="493" height="80" uuid="315ef7d8-4212-4e1a-af40-32469a8a24fa"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firmanteDgemssSello}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="-252" width="494" height="20" uuid="ffe0af2a-d705-46dd-a7e6-51c9a7a9dec8"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma DGEMSS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="27" y="-106" width="494" height="54" uuid="dda11778-7e66-47c4-ad3f-be86923dcd90"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cadenaOriginal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="27" y="-146" width="493" height="1" uuid="28b2c452-e7fe-4aa1-b427-7ae7bd5c18cc"/>
+			</line>
+			<line>
+				<reportElement x="28" y="-52" width="493" height="1" uuid="c6e2f5ec-66de-4af8-b0f3-63afcca708aa"/>
+			</line>
+			<staticText>
+				<reportElement x="26" y="-132" width="496" height="20" uuid="abd32558-3856-4185-8c12-387eba005192"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cadena original]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="30" uuid="29632a33-8c90-4ad6-879e-25472ec162bc"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="218" y="663" width="174" height="37" uuid="6564a1fe-1fb4-4de6-adcb-b53b34f8c570">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.MultiFormatWriter().encode($P{folioControl}, com.google.zxing.BarcodeFormat.CODE_128, 150, 150, java.util.Collections.singletonMap(com.google.zxing.EncodeHintType.MARGIN, 0))
+)]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="30" y="666" width="154" height="30" uuid="3b9e7164-9d5a-42ab-bf33-2234fae63a93">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.MultiFormatWriter().encode("FIRMA ELECTRONICA DE LA AUTORIDAD DE LA INSTITUCIÓN EDUCATIVA:\nTBC MORELOS: "+$P{firmanteEscuelaTitulo} + " " + $P{firmanteEscuelaNombreCompleto}+"\nAUTENTICACION DE LA AUTORIDAD ESTATAL:\nAUTORIDAD LOCAL: "+$P{firmanteDgemssTitulo} + " " +$P{firmanteDgemssNombreCompleto}, com.google.zxing.BarcodeFormat.PDF_417, 400, 400,java.util.Collections.singletonMap(com.google.zxing.EncodeHintType.MARGIN, 0))
+)]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

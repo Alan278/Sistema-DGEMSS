@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="constancia_mayor" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5f0fa46b-e8cc-4892-b703-6f041424f081">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="institucion" class="java.lang.String"/>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="primerApellido" class="java.lang.String"/>
+	<parameter name="segundoApellido" class="java.lang.String"/>
+	<parameter name="matricula" class="java.lang.String"/>
+	<parameter name="uuid" class="java.lang.String"/>
+	<parameter name="carrera" class="java.lang.String"/>
+	<parameter name="firmanteDgemssFecha" class="java.lang.String"/>
+	<parameter name="folioControl" class="java.lang.String"/>
+	<parameter name="firmanteEscuelaSello" class="java.lang.String"/>
+	<parameter name="firmanteDgemssSello" class="java.lang.String"/>
+	<parameter name="qr" class="java.io.InputStream"/>
+	<parameter name="foto" class="java.io.InputStream"/>
+	<parameter name="cadenaOriginal" class="java.lang.String"/>
+	<parameter name="firmanteEscuelaTitulo" class="java.lang.String"/>
+	<parameter name="firmanteEscuelaNombreCompleto" class="java.lang.String"/>
+	<parameter name="firmanteDgemssTitulo" class="java.lang.String"/>
+	<parameter name="firmanteDgemssNombreCompleto" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="-10" y="0" width="570" height="802" uuid="c7b1fc99-5c06-431f-81b5-d9d4f5e3d6c9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["MARCO CARTA.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<image>
+				<reportElement x="450" y="40" width="60" height="62" uuid="575f8f7f-2f1f-4a50-bbaa-d73454d9db67"/>
+				<imageExpression><![CDATA[$P{foto}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="20" y="50" width="540" height="20" uuid="73cef12c-9bb6-4658-ab15-fd2fe4068141"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GOBIERNO DEL ESTADO DE MORELOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="70" width="450" height="24" uuid="77e2e3f8-9a83-4c50-905e-b5fcd4f18d35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECRETARÍA DE EDUCACIÓN]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="60" y="39" width="70" height="65" uuid="792a4724-810a-46a6-b289-cb0b592360a3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["logoMorelos1.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="30" y="159" width="492" height="51" uuid="f6b6b972-e95a-4c4f-b764-fee915e9d39f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Que según los archivos existentes de esta institución educativa "+$P{institucion}+" que el alumno: "+$P{nombre}+" "+$P{primerApellido}+" "+$P{segundoApellido}+" de la carrera de "+$P{carrera}+" realizó su servicio social obligatorio."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="156" y="130" width="240" height="20" uuid="d292359b-f6de-4cfd-8901-88bfc1bb9262"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Hace constar:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="94" width="390" height="30" uuid="a40504dc-522c-4c5d-93b3-a46300e70559"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Dirección General de Edcuación Media Superior y Superior]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="31" y="376" width="492" height="40" uuid="05e834ba-5e82-4e4a-9040-a6f83bab4ca5"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firmanteEscuelaSello}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="356" width="493" height="20" uuid="e6e1e386-c0f2-48ba-8120-0168a796aa22"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Autoridad Educativa: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="426" width="492" height="20" uuid="c2f906c5-b1bc-4a58-93b5-49b4f3f420a6"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Autoridad Estatal: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="31" y="446" width="492" height="50" uuid="387dcb2c-2a62-499f-9348-388df6dd3580"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firmanteDgemssSello}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="526" width="492" height="50" uuid="a2c5c2d0-27d9-4368-ac74-99775ed56b18"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cadenaOriginal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="31" y="416" width="492" height="1" uuid="1c82e436-e448-44c2-a698-2df5668123a0"/>
+			</line>
+			<line>
+				<reportElement x="31" y="496" width="492" height="1" uuid="c4c60ba0-e973-4b2d-b5e7-4a7f29a90105"/>
+			</line>
+			<line>
+				<reportElement x="31" y="576" width="492" height="1" uuid="2ee632fc-6ad9-4f0f-95e0-613afbad056c"/>
+			</line>
+			<staticText>
+				<reportElement x="31" y="506" width="492" height="20" uuid="a6fa45a7-9e16-4ec1-8152-a15843c35531"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Cadena original: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="220" width="492" height="130" uuid="b5f63659-05a7-4dc9-8d7c-4fd7d6169d5b"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Se libera de prestar Servicio Social obligatorio, lo anterior con fundamento en el artículo 135 fracción VI del Reglamento de la Ley de Educación del estado de Morelos en materia de Reconocimiento de Validez Oficial de estudios de tipo superior, que a la letra dice:
+VI. Solo quedan excluidos de la prestación del servicio social quienes sean mayores de sesenta años y quienes padezcan una enfermedad que los incapacite para realizarlo.
+conforme lo establecen los artículos 49 y 50 de la Ley sobre el Ejercicio de las Profesiones en el Estado de Morelos, 85 y 93 del Reglamento de la Ley Reglamentaria del artículo 5° Constitucional y artículos 85 del Reglamento de la Ley Reglamentaria del artículo 5° Constitucional, así como la Normatividad y el Reglamento General de Servicio Social.]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="431" y="640" width="76" height="70" uuid="49888ab2-65a0-47ee-ba28-e9b46a5b3a74">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{qr}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="216" y="710" width="174" height="15" forecolor="#000000" uuid="e895de4e-0393-4e95-bb27-c98e5b3f2830"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{folioControl}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="220" y="663" width="174" height="37" uuid="f5c8acc1-ded5-47ac-a475-216efcea2c51">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.MultiFormatWriter().encode($P{folioControl}, com.google.zxing.BarcodeFormat.CODE_128, 150, 150, java.util.Collections.singletonMap(com.google.zxing.EncodeHintType.MARGIN, 0))
+)]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="32" y="666" width="154" height="30" uuid="170aea93-b5f1-4e04-b687-af063b7523ca">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.MultiFormatWriter().encode("FIRMA ELECTRONICA DE LA AUTORIDAD DE LA INSTITUCIÓN EDUCATIVA:\nTBC MORELOS: "+$P{firmanteEscuelaTitulo} + " " + $P{firmanteEscuelaNombreCompleto}+"\nAUTENTICACION DE LA AUTORIDAD ESTATAL:\nAUTORIDAD LOCAL: "+$P{firmanteDgemssTitulo} + " " +$P{firmanteDgemssNombreCompleto}, com.google.zxing.BarcodeFormat.PDF_417, 400, 400,java.util.Collections.singletonMap(com.google.zxing.EncodeHintType.MARGIN, 0))
+)]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

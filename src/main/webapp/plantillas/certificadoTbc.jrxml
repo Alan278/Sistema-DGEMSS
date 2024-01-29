@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certificadoTbc" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="b56af48b-e462-43ec-9e0a-a700ea2c7500">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="587"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<subDataset name="Table Dataset 1" uuid="944af3df-d61f-4f4f-90b3-82d60f5e715e">
+		<field name="clave" class="java.lang.String"/>
+		<field name="nombre" class="java.lang.String"/>
+		<field name="calificacion" class="java.lang.String"/>
+		<field name="ciclo" class="java.lang.String"/>
+		<field name="calificacionLetra" class="java.lang.String"/>
+		<field name="observaciones" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="primerApellido" class="java.lang.String"/>
+	<parameter name="segundoApellido" class="java.lang.String"/>
+	<parameter name="materias" class="java.util.List"/>
+	<parameter name="cadenaOriginal" class="java.lang.String"/>
+	<parameter name="firmanteEscuelaSello" class="java.lang.String"/>
+	<parameter name="firmanteDgemssSello" class="java.lang.String"/>
+	<parameter name="qr" class="java.io.InputStream"/>
+	<parameter name="carrera" class="java.lang.String"/>
+	<parameter name="modalidad" class="java.lang.String"/>
+	<parameter name="rvoe" class="java.lang.String"/>
+	<parameter name="fechaRvoe" class="java.lang.String"/>
+	<parameter name="claveSeem" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{rvoe}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tipoCertificado" class="java.lang.String"/>
+	<parameter name="promedio" class="java.lang.String"/>
+	<parameter name="promedioLetra" class="java.lang.String"/>
+	<parameter name="numeroAsignaturas" class="java.lang.String"/>
+	<parameter name="calificacionMinima" class="java.lang.String"/>
+	<parameter name="calificacionMinimaAprobatoria" class="java.lang.String"/>
+	<parameter name="calificacionMaxima" class="java.lang.String"/>
+	<parameter name="municipio" class="java.lang.String"/>
+	<parameter name="firmanteDgemssFecha" class="java.lang.String"/>
+	<parameter name="materias2" class="java.util.List"/>
+	<parameter name="numPaginas" class="java.lang.Integer"/>
+	<parameter name="foto" class="java.io.InputStream"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="fechaUltimaAcreditacion" class="java.lang.String"/>
+	<parameter name="libro" class="java.lang.String"/>
+	<parameter name="foja" class="java.lang.String"/>
+	<parameter name="numero" class="java.lang.String"/>
+	<parameter name="institucion" class="java.lang.String"/>
+	<parameter name="institucionMunicipio" class="java.lang.String"/>
+	<parameter name="institucionClaveCt" class="java.lang.String"/>
+	<parameter name="tipoCertificadoRedaccion" class="java.lang.String"/>
+	<parameter name="folioControl" class="java.lang.String"/>
+	<parameter name="firmanteEscuelaNombreCompleto" class="java.lang.String"/>
+	<parameter name="firmanteDgemssNombreCompleto" class="java.lang.String"/>
+	<parameter name="firmanteEscuelaTitulo" class="java.lang.String"/>
+	<parameter name="firmanteDgemssTitulo" class="java.lang.String"/>
+	<parameter name="duplicado" class="java.lang.Boolean"/>
+	<parameter name="numeroAsignaturasAcreditadas" class="java.lang.String"/>
+	<background>
+		<band height="792" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="612" height="792" uuid="561323ad-3506-4e50-890b-a2231490b6e0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["MARCO CARTA.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="116">
+			<staticText>
+				<reportElement x="37" y="41" width="540" height="20" uuid="f8326911-7ef7-42bb-89f2-7bbbd1e2b067"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GOBIERNO DEL ESTADO DE MORELOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="37" y="58" width="540" height="24" uuid="7b513bd3-77e5-446a-a58f-4e1a01dbe388"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECRETARÍA DE EDUCACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="37" y="77" width="540" height="23" uuid="a8747b59-f69d-487b-8cee-11df81d37b7b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DIRECCIÓN GENERAL DE EDUCACIÓN MEDIA SUPERIOR Y SUPERIOR]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="37" y="41" width="70" height="65" uuid="32fb9294-6692-4e40-9a7d-8800887c23c0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["logoMorelos1.png"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="462" y="41" width="115" height="55" uuid="3b9942f5-f647-49e8-9bff-c7e16dc7559f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["logoTbc.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="626" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<componentElement>
+				<reportElement key="table" stretchType="RelativeToBandHeight" x="37" y="89" width="540" height="461" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="6a970c8d-0109-4124-9790-7f981a9c3834">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="Table Dataset 1" uuid="81688d00-6c96-4b60-9a44-91a6743ac102">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{materias})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="30" uuid="40e2a4cc-dcb3-4848-8a37-74e867902ea9">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader height="20" rowSpan="2">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="30" height="20" uuid="18767139-6e9e-4630-aa07-35fcfef9c3b6">
+									<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[CLAVE]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell height="9" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField textAdjust="StretchHeight">
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="30" height="9" uuid="73153164-f665-446e-89cf-e491dc231305"/>
+								<box leftPadding="0">
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="6"/>
+									<paragraph lineSpacingSize="0.0"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{clave}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="230" uuid="e71306ce-213d-4d67-ae72-909327c663e7">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableHeader height="20" rowSpan="2">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="230" height="20" uuid="46d76b17-a47e-4daa-bed8-7cea8509b49c"/>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[NOMBRE DE LA ASIGNATURA]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell height="9" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField textAdjust="StretchHeight">
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="230" height="9" uuid="8c8763c0-f70e-4b2f-825e-c672d256898f">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								</reportElement>
+								<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="0">
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font size="6"/>
+									<paragraph lineSpacing="1_1_2" lineSpacingSize="0.02"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{observaciones}.equals("E.E.") ? $F{nombre}+" *" : $F{nombre}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="c0af10a8-b087-4185-a773-72efd647560b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:tableHeader height="20" rowSpan="2">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="20" uuid="22cc2196-6e91-4fb9-917a-0ff043484c5e">
+									<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[CICLO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell height="9" rowSpan="1">
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField textAdjust="StretchHeight">
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="60" height="9" uuid="00ac727f-5dce-4056-b9b6-e73c76811470"/>
+								<box leftPadding="0">
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="6"/>
+									<paragraph lineSpacingSize="0.0"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ciclo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:columnGroup width="130" uuid="4f011e1a-3930-42b6-91dd-070f65476dc9">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [2]"/>
+						<jr:tableHeader height="10" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="130" height="10" uuid="67ec772c-ca62-452d-ba4b-5e398f8bc7a0">
+									<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[CALIFICACIONES]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="40" uuid="2e5f5b22-5381-4439-b81b-f2b0e0116766">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+							<jr:tableHeader height="10" rowSpan="1">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="40" height="10" uuid="d19de3a5-4b22-4a8f-8f01-148658933c64"/>
+									<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font size="7"/>
+									</textElement>
+									<text><![CDATA[NÚMERO]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:detailCell height="9">
+								<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField>
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="40" height="9" uuid="fc355537-1d5f-495b-bd19-ee3a8130ad60"/>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font size="6"/>
+										<paragraph lineSpacingSize="0.0"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{calificacion}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="90" uuid="3e97b201-9ffa-4941-bd31-50e2bf5c4256">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+							<property name="com.jaspersoft.studio.layout"/>
+							<jr:tableHeader height="10" rowSpan="1">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="10" uuid="21ec951c-ef7b-4676-8032-68b9560e7bac">
+										<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+									</reportElement>
+									<box>
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font size="7"/>
+									</textElement>
+									<text><![CDATA[LETRA]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:detailCell height="9">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+								<property name="com.jaspersoft.studio.layout"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField textAdjust="StretchHeight">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="90" height="9" uuid="0229ab68-6c7c-41fc-8a84-309621773248"/>
+									<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="4">
+										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font size="6"/>
+										<paragraph lineSpacing="Single" lineSpacingSize="2.0"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{calificacionLetra}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+					<jr:column width="90" uuid="e61295c2-4707-4fa8-ac3a-bec89c0ee93d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:tableHeader height="20" rowSpan="2">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="20" uuid="4288d717-50de-466e-9b30-2e69936568b0"/>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[OBSERVACIONES]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell height="9">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							<box>
+								<pen lineWidth="0.0"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:detailCell>
+					</jr:column>
+					<jr:tableHeader/>
+				</jr:table>
+			</componentElement>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="37" y="-2" width="70" height="85" uuid="fe63a95f-adfa-4d85-b5a0-13afda533b1d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{foto}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="119" y="-2" width="440" height="19" uuid="bd3bb860-501d-4c3b-b5c7-d90ab16755ed">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[El suscrito, Responsable del Telebachillerato Comunitario del Estado de Morelos, con base en el Artículo 141 de la Ley General de Educación.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="119" y="42" width="440" height="40" uuid="6db2e476-8677-47f9-8e8b-35df3c1499de"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["que según documentos existentes en el archivo escolar, el alumno(a) " + $P{nombre} + " " + $P{primerApellido} + " " + $P{segundoApellido} + ", cursó en el Centro Educativo " + $P{institucion} + " (" + $P{institucionClaveCt} + ") del Municipio de " + $P{institucionMunicipio} + ", los módulos del Bachillerato General Escolarizado que a continuación se anotan."]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="37" y="569" width="540" height="54" uuid="0561cbc9-2ba1-4464-a938-6ee97102e1d2"/>
+				<textField>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="186" y="24" width="168" height="30" uuid="a5abd4ab-de15-4ff6-9346-93c92a5ec30e"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PROMEDIO GENERAL\n" + $P{promedio}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="540" height="24" uuid="7535307f-b3bf-4d95-ba64-df9dd42bfff9"/>
+					<textElement textAlignment="Justified">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["En cumplimiento de las disposiciones vigentes y para los usos legales que procedan, se extiende el presente certificado que ampara " + $P{numeroAsignaturasAcreditadas} + " Módulos acreditados de los " + $P{numeroAsignaturas} + " que integran el Plan de Estudio."]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="372" y="24" width="168" height="30" uuid="d90c56f8-519f-4c3c-bee7-f87e10133787"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["LUGAR Y FECHA DE EXPEDICIÓN\n" +
+$P{municipio} + ", MOR. A " + $P{firmanteDgemssFecha}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="24" width="168" height="30" uuid="0411b617-3f12-4d89-9a8a-534cc78c90c1"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["ACREDITACIÓN DE LA ÚLTIMA MATERIA\n"
++ $P{fechaUltimaAcreditacion}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="119" y="17" width="440" height="10" uuid="89547214-b5bd-4716-ad02-df24c39015fd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CERTIFICADO " + $P{tipoCertificado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="27" width="440" height="10" uuid="31e9413f-0ec0-45f2-99b1-0837fef2a2d4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{duplicado}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DUPLICADO"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="626">
+			<image scaleImage="FillFrame">
+				<reportElement x="487" y="533" width="90" height="90" uuid="598b0426-0c32-4a8a-b9a2-29ac33aa0e1f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{qr}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="Float" x="37" y="465" width="540" height="59" uuid="6ca3ab10-469f-40c2-b665-697fc7de80db">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="5"/>
+				</textElement>
+				<text><![CDATA[NOTAS . 
+-La calificación mínima aprobatoria es de 6.0 
+-Este documento es nulo si presenta raspadura o enmendaduras. 
+-Abreviatura utilizada: RV- Revalidación. 
+-Las Actividades Cocurriculares serán evaluadas con A, (acreditada) si son aprobatorias y no se contabilizarán para el promedio. 
+-Las asignaturas sin numerar no integran el Plan de Estudios, son adicionales y no obligatorias.
+-Las asignaturas acreditadas en evaluación extraordinaria son marcadas con un asterisco.
+-Con fundamento en el artículo 180 de la Ley de Educación del Estado de Morelos, Los estudios realizados dentro del Sistema Educativo Estatal por formar parte del Sistema Educativo Nacional, tendrán validez en toda la República.
+-El presente certificado de estudios es expedido previa consulta y validación de antecedentes escolares en el área de control escolar de la Secretaría de Educación del Estado de Morelos, la cual ha sido firmada mediante el uso de la firma electrónica avanzada, amparada por un certificado vigente a la fecha de su emisión y es válido de conformidad con lo dispuesto en artículo 9 de la Ley de Firma Electrónica del Estado Libre y Soberano de Morelos.]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="37" y="33" width="540" height="20" uuid="198f968d-4e91-4234-a898-676aa3b38e5a"/>
+				<textElement>
+					<font fontName="Arial" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firmanteEscuelaSello}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="37" y="92" width="200" height="10" uuid="701afd74-2cc7-4ff2-81e7-18ac448c8acc"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CADENA ORIGINAL DE LA AUTORIDAD EDUCATIVA:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="37" y="102" width="540" height="71" uuid="be2879c5-3c5b-406a-8cd8-e7926e2a8484"/>
+				<textElement>
+					<font fontName="Arial" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cadenaOriginal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="37" y="23" width="200" height="10" uuid="2c72a451-f1a8-4011-ab20-0f5b9c244b9d"/>
+				<textElement>
+					<font fontName="Arial" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SELLO DIGITAL DE LA AUTORIDAD DE LA INSTITUCIÓN EDUCATIVA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="37" y="58" width="200" height="10" uuid="55ec3cc7-babd-4774-999e-8f7656bd5378"/>
+				<textElement>
+					<font fontName="Arial" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SELLO DIGITAL DE LA AUTORIDAD ESTATAL:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="37" y="68" width="540" height="20" uuid="da6fef51-dc0a-40bb-9053-a5488da5f94c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firmanteDgemssSello}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="255" y="560" width="174" height="37" uuid="e2a86a38-59ea-4ded-9338-1b639a17a53a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.MultiFormatWriter().encode($P{folioControl}, com.google.zxing.BarcodeFormat.CODE_128, 150, 150, java.util.Collections.singletonMap(com.google.zxing.EncodeHintType.MARGIN, 0))
+)]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="37" y="558" width="185" height="40" uuid="4ad2d81b-3152-435b-9d52-f403289f6185">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.MultiFormatWriter().encode("FIRMA ELECTRONICA DE LA AUTORIDAD DE LA INSTITUCIÓN EDUCATIVA:\nTBC MORELOS: "+$P{firmanteEscuelaTitulo} + " " + $P{firmanteEscuelaNombreCompleto}+"\nAUTENTICACION DE LA AUTORIDAD ESTATAL:\nAUTORIDAD LOCAL: "+$P{firmanteDgemssTitulo} + " " +$P{firmanteDgemssNombreCompleto}, com.google.zxing.BarcodeFormat.PDF_417, 400, 400,java.util.Collections.singletonMap(com.google.zxing.EncodeHintType.MARGIN, 0))
+)]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="255" y="597" width="174" height="15" forecolor="#000000" uuid="fed9b62d-a591-4d3d-81de-c23dcdc3b7d0"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{folioControl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="37" y="7" width="354" height="10" uuid="db0709c1-f16c-4fa1-9db4-a27930b6662d"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LIBRO: " + $P{libro} + "    FOJA: " + $P{foja} + "    NÚMERO: " + $P{numero}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50"/>
+	</pageFooter>
+</jasperReport>

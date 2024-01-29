@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="revalidacion" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="b56af48b-e462-43ec-9e0a-a700ea2c7500">
+	<property name="ireport.zoom" value="2.1435888100000016"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="21"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<subDataset name="Table Dataset 1" uuid="944af3df-d61f-4f4f-90b3-82d60f5e715e">
+		<field name="clave" class="java.lang.String"/>
+		<field name="nombre" class="java.lang.String"/>
+		<field name="calificacion" class="java.lang.String"/>
+		<field name="ciclo" class="java.lang.String"/>
+		<field name="calificacionLetra" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="nivelInterno" class="java.lang.String"/>
+	<parameter name="nivelExterno" class="java.lang.String"/>
+	<parameter name="alumno" class="java.lang.String"/>
+	<parameter name="institucion" class="java.lang.String"/>
+	<parameter name="cicloEscolar" class="java.lang.String"/>
+	<parameter name="estado" class="java.lang.String"/>
+	<parameter name="pais" class="java.lang.String"/>
+	<parameter name="fechaTermino" class="java.lang.String"/>
+	<parameter name="expediente" class="java.lang.String"/>
+	<parameter name="lugarExpedicion" class="java.lang.String"/>
+	<parameter name="nombreDirector" class="java.lang.String"/>
+	<parameter name="folio" class="java.lang.String"/>
+	<parameter name="fechaExpedicion" class="java.lang.String"/>
+	<parameter name="qr" class="java.io.InputStream"/>
+	<background>
+		<band height="792" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="612" height="792" uuid="7f6c46f0-b866-4f5e-a693-9d3205be4ada"/>
+				<imageExpression><![CDATA["MARCO CARTA.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="116">
+			<staticText>
+				<reportElement x="87" y="34" width="487" height="20" uuid="f8326911-7ef7-42bb-89f2-7bbbd1e2b067"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SISTEMA EDUCATIVO NACIONAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="50" width="487" height="24" uuid="7b513bd3-77e5-446a-a58f-4e1a01dbe388"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECRETARÍA DE EDUCACIÓN DEL ESTADO DE MORELOS]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="38" y="34" width="59" height="67" uuid="32fb9294-6692-4e40-9a7d-8800887c23c0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["logoMorelos.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="630" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="37" y="177" width="538" height="49" uuid="b606622e-59cc-47c7-a692-3c796e83d3dc"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sus estudios correspondientes a "+$P{nivelExterno}+ " en el ciclo escolar "+$P{cicloEscolar}+" que realizó en "+$P{institucion}+", "+$P{estado}+" "+$P{pais}+" de conformidad con el Diploma de fecha "+$P{fechaTermino}+" documentación que obra en el expediente "+$P{expediente}+" integrado por esta unidad administrativa."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="37" y="237" width="538" height="29" uuid="96174b63-eb28-44ee-95d0-e88c75f7cdae"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El presente documento se expide en "+$P{lugarExpedicion}+", Morelos el "+$P{fechaExpedicion}+"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="37" y="395" width="538" height="18" uuid="38477265-8840-497c-9410-4266cc2b7330"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DR. H. C. HIRAM MINA VALDÉS"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="37" y="15" width="538" height="18" uuid="ca75f406-6148-46b5-bead-883caeb6d134"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["RESOLUCIÓN DE REVALIDACIÓN A ESTUDIOS DE " + $P{nivelInterno}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="37" y="277" width="538" height="24" uuid="c7c221f8-33c1-4e1d-9251-b526675b7d05"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECTOR GENERAL DE EDUCACIÓN MEDIA SUPERIOR Y SUPERIOR]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="37" y="147" width="538" height="18" uuid="df4d8020-c8f4-4e0d-86d7-13b633a5b6ab"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{alumno}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="37" y="425" width="538" height="18" uuid="e4d76c16-97f3-4a53-9751-07a21ecb3db0"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Folio: " + $P{folio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="37" y="45" width="538" height="94" uuid="187fe5c2-1d3b-4b2e-9065-b6cb6f0e1f8a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["La DIRECCIÓN GENERAL DE EDUCACIÓN MEDIA SUPERIOR Y SUPERIOR, con fundamento en lo establecido en los artículos 35, 115, fracción V, 142, 144 de la Ley General de Educación, 156 fracción VI, 180, 181, 182 y 183 de la Ley de Educación del Estado de Morelos y del Artículo fracción XVI del Reglamento Interior de la Secretaría de Educación del Estádo de Morelos, de conformidad con lo dispuesto en el Acuerdo 02/04/17 por el que se modifica el diverso 286, y considerando que los estudios realizados por el solicitante son equiparables con " + $P{nivelInterno}.toLowerCase() +" General del Sistema Educativo Nacional, revalida a:"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="37" y="530" width="100" height="100" uuid="74be18af-9beb-4e0d-86e6-492bb25b4b8f"/>
+				<imageExpression><![CDATA[$P{qr}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="270" y="606" width="303" height="24" uuid="9f24df62-e5de-45d6-8bf8-01dca0b5f95a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[El presente documento electrónico puede ser verificado a través del código OR o ante la autoridad que lo suscribe.]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
